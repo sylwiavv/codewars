@@ -139,13 +139,44 @@ deepSearch(obj, "gender");  // ➞ []
 ✅ Uses only array methods and recursion (no let, no for)
 
 **Example:**
-```
+```js
 const data = [1, 2, [3, 4, 2], [1, [5, 6, 3], 7], 8, 1];
 
 console.log(removeDuplicates(data));
 // Output: [1, 2, [3, 4], [5, 6, 7], 8]
 ```
 
-9️⃣🔟
+### 9️⃣ **Sum of Nested Arrays**
+**Description:**  
+ Write a function that sums up all the numbers in a nested array, including numbers inside subarrays. Use recursion and array methods like flatMap().
 
+**Example:**
+```js
+const data = [1, [2, 3], [4, [5, 6]], 7];
+console.log(sumNestedArrays(data)); // Output: 28
+```
+### 🔟 **Count Occurrences in a Nested Array**
+**Description:** 
+ Write a function that counts the number of occurrences of a specific value in a nested array.
 
+**Example:**
+```js
+const data = [1, [2, 3], [4, [5, 6, 2], 7], 2];
+console.log(countOccurrences(data, 2)); // Output: 3
+```
+
+### 1️⃣1️⃣ **Deep Clone an Object**
+**Description:** 
+Write a function that deep clones an object, including all nested objects. Use recursion and array methods like Object.keys() and reduce().
+
+**Example:**
+```js
+const obj = {
+  a: 1,
+  b: [2, 3],
+  c: { d: 4, e: [5] }
+};
+
+console.log(deepCloneObject(obj)); 
+// Output: { a: 1, b: [2, 3], c: { d: 4, e: [5] } }
+```

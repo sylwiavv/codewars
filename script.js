@@ -162,5 +162,37 @@ const handleRemoveDuplicates = (array) => {
     }).filter((value, index, self) => self.indexOf(value) === index); 
 }
 
+// ---------------------------------- //
+//  9️⃣
+// 👉 Sum of Nested Arrays
+const dataNumbers = [1, [2, 3], [4, [5, 6]], 7]; // Output: 28
+
+const sumNestedArrays = (array) => {
+    return array
+      .flatMap((element) => {
+        if (Array.isArray(element)) {
+          return sumNestedArrays(element);
+        } else {
+          return element;
+        }
+      })
+      .reduce((acc, currentValue) => acc + currentValue, 0);
+  };
+
+  // ---------------------------------- //
+// 👉 Count Occurrences in a Nested Array
+const numberInArray = [1, [2, 3], [4, [5, 6, 2], 7], 2]; // Output: 3
+  
+const countOccurrences = (array, placeInArray) => {
+    return array.reduce((acc, element) => {
+        if (Array.isArray(element)) {
+            return acc + countOccurrences(element, placeInArray);
+        } else {
+            return acc + (element === placeInArray ? 1 : 0);
+        }
+    }, 0);
+};
 
 
+
+// 👉 1️⃣1️⃣ **Deep Clone an Object**
