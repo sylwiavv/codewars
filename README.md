@@ -132,3 +132,20 @@ deepSearch(obj, "gender");  // ➞ []
 
 ---
 
+### 8️⃣ **Remove Duplicates in a Nested Array 🔄** (4 kyu)
+**Description:**  
+✅ Removes duplicate values from an array (including nested arrays)
+✅ Preserves the array structure
+✅ Uses only array methods and recursion (no let, no for)
+
+**Example:**
+```
+const data = [1, 2, [3, 4, 2], [1, [5, 6, 3], 7], 8, 1];
+
+console.log(removeDuplicates(data));
+// Output: [1, 2, [3, 4], [5, 6, 7], 8]
+```
+
+9️⃣🔟
+
+

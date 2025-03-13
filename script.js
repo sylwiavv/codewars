@@ -150,4 +150,17 @@ const handleMeetTheConditions = (obj, callback) => {
  handleMeetTheConditions(objAlice, callback);
 
 // ---------------------------------- //
+const data = [1, 2, [3, 4, 2], [1, [5, 6, 3], 7], 8, 1];
+
+const handleRemoveDuplicates = (array) => {
+    return array.map((arr) => {
+        if (Array.isArray(arr)) {
+            return handleRemoveDuplicates(arr);
+        } else {
+            return arr;
+        }
+    }).filter((value, index, self) => self.indexOf(value) === index); 
+}
+
+
 
