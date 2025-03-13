@@ -132,11 +132,3 @@ deepSearch(obj, "gender");  // ➞ []
 
 ---
 
-## 🛠 **How to Use**
-1. Clone this repository or copy the challenges.
-2. Implement the functions in JavaScript.
-3. Test them with different cases.
-4. Optimize solutions using **functional programming**.
-
-Happy coding! 🚀🔥
-
