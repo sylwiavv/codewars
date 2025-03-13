@@ -1,104 +1,113 @@
-1. Drink
-Kids drink toddy.
-Teens drink coke.
-Young adults drink beer.
-Adults drink whisky.
-Make a function that receive age, and return what they drink.
+# 🏆 JavaScript Coding Challenges
 
-Rules:
+A collection of algorithmic challenges for different levels, from beginner to advanced. The tasks focus on recursion, array methods, and functional programming techniques.
 
-Children under 14 old.
-Teens under 18 old.
-Young under 21 old.
-Adults have 21 or more.
-Examples: (Input --> Output)
+---
 
-13 --> "drink toddy"
-17 --> "drink coke"
-18 --> "drink beer"
-20 --> "drink beer"
-30 --> "drink whisky"
+## 🚀 Challenges
 
------------------------------------------------------------
+### 1️⃣ **What Do They Drink?** (8 kyu)
+**Description:**  
+Given an age, return what the person drinks.
 
-Task (7 kyu – Codewars)
-👉 Find the smallest integer in an array
+**Rules:**
+- Children under **14** → `"drink toddy"`
+- Teens under **18** → `"drink coke"`
+- Young adults under **21** → `"drink beer"`
+- Adults **21+** → `"drink whisky"`
 
-Problem:
-Write a function that finds the smallest integer in an array of numbers.
+**Examples:**
+```js
+whatDoTheyDrink(13); // ➞ "drink toddy"
+whatDoTheyDrink(17); // ➞ "drink coke"
+whatDoTheyDrink(18); // ➞ "drink beer"
+whatDoTheyDrink(30); // ➞ "drink whisky"
+```
 
-Example:
-findSmallestInt([34, 15, 88, 2]); // ➝ 2
-findSmallestInt([34, -345, -1, 100]); // ➝ -345
+---
 
+### 2️⃣ **Find the Smallest Integer** (7 kyu)
+**Description:**  
+Write a function that finds the smallest integer in an array.
 
------------------------------------------------------------
+**Example:**
+```js
+findSmallestInt([34, 15, 88, 2]);      // ➞ 2
+findSmallestInt([34, -345, -1, 100]);  // ➞ -345
+```
 
-"Find the missing letter"
-Level: 6 kyu
-Description:
-You are given an array of characters, where each character is a lowercase letter. You need to find the letter that is missing from the sequence. The sequence will always contain one missing letter, and it will not contain any duplicates.
+---
 
-['a', 'b', 'c', 'd', 'f'] -> 'e'
-['O', 'Q', 'R', 'S'] -> 'P'
+### 3️⃣ **Find the Missing Letter** (6 kyu)
+**Description:**  
+You are given an array of consecutive letters, but one letter is missing. Find and return the missing letter.
 
-// ------------------
-Task: Reverse Words in a Sentence
-Description:
-Write a function that takes a sentence as input and returns the sentence with the words reversed. The words in the sentence should be reversed, but the order of the words in the sentence should remain the same.
+**Examples:**
+```js
+findMissingLetter(['a', 'b', 'c', 'd', 'f']); // ➞ 'e'
+findMissingLetter(['O', 'Q', 'R', 'S']);       // ➞ 'P'
+```
 
-For example:
+---
 
-Input: "Hello World"
-Output: "olleH dlroW"
-Requirements:
+### 4️⃣ **Reverse Words in a Sentence** (6 kyu)
+**Description:**  
+Given a sentence, reverse the letters in each word while keeping the word order unchanged.
 
-Use recursion to reverse each word in the sentence.
-Use array methods like map(), join(), and split().
-Avoid using loops like for or while.
+**Requirements:**
+- Use **recursion** to reverse each word.
+- Use **array methods** like `map()`, `split()`, `join()`.
+- Avoid loops (`for`, `while`).
 
-// ---------------------- //
+**Example:**
+```js
+reverseWords("Hello World"); // ➞ "olleH dlroW"
+```
 
-Task: Find the longest string in an array of strings
-Description: Given an array of strings, write a function that finds the longest string in the array. If there are multiple strings of the same maximum length, return the one that appears first.
+---
 
-For example:
+### 5️⃣ **Find the Longest String in an Array** (6 kyu)
+**Description:**  
+Given an array of strings, find the longest one. If multiple have the same length, return the first.
 
-javascript
-Copy
-Edit
-longestString(["apple", "banana", "grape", "kiwi", "strawberry"]) 
-// Output: "strawberry"
+**Examples:**
+```js
+longestString(["apple", "banana", "grape", "kiwi", "strawberry"]);
+// ➞ "strawberry"
 
-longestString(["cat", "dog", "elephant", "bird"]) 
-// Output: "elephant"
+longestString(["cat", "dog", "elephant", "bird"]);
+// ➞ "elephant"
+```
 
-// ---------------------------------- //
+---
 
-Task: Recursive Flattening of Nested Arrays
-Description: Write a function that takes a nested array (an array of arrays) and flattens it into a single array. The function should be implemented recursively, meaning you shouldn't use loops.
+### 6️⃣ **Recursive Flattening of Nested Arrays** (5 kyu)
+**Description:**  
+Write a recursive function that flattens a nested array into a single-level array.
 
-For example:
+**Examples:**
+```js
+flatten([1, [2, 3], [4, [5, 6], 7], 8]);
+// ➞ [1, 2, 3, 4, 5, 6, 7, 8]
 
-<!-- flatten([1, [2, 3], [4, [5, 6], 7], 8]) -->
-// Output: [1, 2, 3, 4, 5, 6, 7, 8]
+flatten([[[1]], 2, [3, [4]]]);
+// ➞ [1, 2, 3, 4]
+```
 
-<!-- flatten([[[1]], 2, [3, [4]]]) -->
-// Output: [1, 2, 3, 4]
+---
 
-// ---------------------------------- //
+### 7️⃣ **Deep Object Key Search** (4 kyu)
+**Description:**  
+Write a function `deepSearch(obj, key)` that searches a deeply nested object and returns an array of all values corresponding to the given key.
 
-Task: Deep Object Key Search (4 kyu)
-Write a function deepSearch(obj, key) that searches a deeply nested object and returns all values corresponding to the given key.
+**Rules:**
+- The object can have **any level of nesting**.
+- The **same key** may appear multiple times.
+- If the key is found multiple times, return **all values**.
+- If the key is not found, return **`[]`**.
 
-Rules:
-
-The object can have any level of nesting.
-Keys may appear multiple times at different levels.
-If the key appears multiple times, the function should return an array of all values.
-If the key is not found, return an empty array [].
-
-Examples
+**Example:**
+```js
 const obj = {
   name: "Alice",
   info: {
@@ -115,7 +124,19 @@ const obj = {
   }
 };
 
-deepSearch(obj, "age"); // ➞ [25, 30]
-deepSearch(obj, "city"); // ➞ ["New York"]
+deepSearch(obj, "age");     // ➞ [25, 30]
+deepSearch(obj, "city");    // ➞ ["New York", "Jelesnia"]
 deepSearch(obj, "hobbies"); // ➞ [["reading", "gaming"]]
-deepSearch(obj, "gender"); // ➞ []
+deepSearch(obj, "gender");  // ➞ []
+```
+
+---
+
+## 🛠 **How to Use**
+1. Clone this repository or copy the challenges.
+2. Implement the functions in JavaScript.
+3. Test them with different cases.
+4. Optimize solutions using **functional programming**.
+
+Happy coding! 🚀🔥
+
