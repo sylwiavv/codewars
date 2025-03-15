@@ -165,6 +165,7 @@ const handleRemoveDuplicates = (array) => {
 // ---------------------------------- //
 //  9️⃣
 // 👉 Sum of Nested Arrays
+// ------------------------------------//
 const dataNumbers = [1, [2, 3], [4, [5, 6]], 7]; // Output: 28
 
 const sumNestedArrays = (array) => {
@@ -179,10 +180,11 @@ const sumNestedArrays = (array) => {
       .reduce((acc, currentValue) => acc + currentValue, 0);
   };
 
-  // ---------------------------------- //
+// ------------------------------------//
 // 👉 Count Occurrences in a Nested Array
+// ------------------------------------//
 const numberInArray = [1, [2, 3], [4, [5, 6, 2], 7], 2]; // Output: 3
-  
+
 const countOccurrences = (array, placeInArray) => {
     return array.reduce((acc, element) => {
         if (Array.isArray(element)) {
@@ -194,5 +196,123 @@ const countOccurrences = (array, placeInArray) => {
 };
 
 
-
+// ------------------------------------//
 // 👉 1️⃣1️⃣ **Deep Clone an Object**
+// ------------------------------------//
+const objToClone = {
+    a: 1,
+    b: [2, 3],
+    c: { d: 4, e: [5] }
+  };
+
+  const deepCloneObject = (obj) => {
+    return Object.keys(obj).reduce((acc, element) => {
+      if (Array.isArray(obj[element])) {
+         acc[element] = obj[element].map((item) => item);
+      } else if (typeof obj[element] === "object" && obj[element] !== null) {
+         acc[element] = deepCloneObject(obj[element]);
+      } else {
+         acc[element] = obj[element];
+      }
+      return acc;
+    }, {});
+};
+
+// ------------------------------------//
+// 👉 1️⃣2️⃣ **Merge Two Sorted Arrays**
+// ------------------------------------//
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+
+const handleSortArrays = (arr1, arr2) => {
+   return arr1.concat(arr2).sort()
+}
+
+// ------------------------------------//
+// 👉 1️⃣3️⃣ **Remove Falsy Values**
+// ------------------------------------//
+const falsyValuesArray = [0, 1, [false, 2, [3, 4, undefined]]];
+
+const removeAllFalsyValues = (falsyValuesArray) => {
+    return falsyValuesArray.filter((value) => {
+      if (Array.isArray(value)) {
+        return removeAllFalsyValues(value);
+      } else {
+        return Boolean(value);
+      }
+    });
+  };  
+
+// console.log(removeAllFalsyValues(falsyValuesArray))
+
+// ------------------------------------//
+// 👉 1️⃣3️⃣ **Remove Falsy Values**
+// ------------------------------------//
+const company = {
+    sales: [{
+      name: 'John',
+      salary: 1000
+    }, {
+      name: 'Alice',
+      salary: 1600
+    }],
+  
+    development: {
+      sites: [{
+        name: 'Peter',
+        salary: 2000
+      }, {
+        name: 'Alex',
+        salary: 1800
+      }],
+  
+      internals: [{
+        name: 'Jack',
+        salary: 1300
+      }]
+    }
+  };
+
+const handleSumSalary= (obj) => {
+    const array = [];
+    const arrayWithValuesAndKeys = Object.entries(obj);
+  
+    arrayWithValuesAndKeys.forEach(([key, value]) => {
+      if (key === 'salary') {
+        return array.push(value);
+      }
+  
+      if (typeof value === "object" && value !== null) {
+       array.push(handleSumSalary(value));
+      }
+    });
+  
+    return array.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0,
+      );
+  };
+  
+  const test2 = handleSumSalary(company);
+
+// ------------------------------ //
+//   ### 1️⃣5️⃣ **Deep Merge with Value Retention**
+
+const obj1 = { a: 1, b: { c: 2, d: 3 } };
+const obj2 = { b: { d: 4, e: 5 }, f: 6 };
+
+const deepMergeObj = (obj1, obj2) => {
+    return [obj1, obj2].reduce((acc, curr) => {
+        Object.keys(curr).forEach((key) => {
+            if (typeof curr[key] === 'object' && !Array.isArray(curr[key]) && curr[key] !== null) {
+                acc[key] = deepMergeObj(acc[key] || {}, curr[key]);
+            } else if (acc[key] !== undefined) {
+                acc[key] = [].concat(acc[key], curr[key]);
+            } else {
+                acc[key] = curr[key];
+            }
+        });
+        return acc;
+    }, {});
+};
+console.log(deepMergeObj(obj1, obj2))

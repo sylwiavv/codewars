@@ -180,3 +180,73 @@ const obj = {
 console.log(deepCloneObject(obj)); 
 // Output: { a: 1, b: [2, 3], c: { d: 4, e: [5] } }
 ```
+
+### 1️⃣2️⃣ **Merge Two Sorted Arrays**
+**Description:** 
+Given two sorted arrays, merge them into a single sorted array. Use recursion to solve it.
+
+**Example:**
+```js
+const arr1 = [1, 3, 5];
+const arr2 = [2, 4, 6];
+console.log(mergeSortedArrays(arr1, arr2)); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+### 1️⃣3️⃣ **Remove Falsy Values**
+**Description:** 
+Description: Write a recursive function that removes all falsy values (false, null, 0, "", undefined, NaN) from a nested array.
+
+**Example:**
+```js
+const data = [0, 1, [false, 2, [3, 4, undefined]]];
+console.log(removeFalsyValues(data)); // Output: [1, 2, [3, 4]]
+```
+### 1️⃣4️⃣ **Salary**
+**Description**
+Write a function to get the sum of all salaries.
+```js
+const company = {
+  sales: [{
+    name: 'John',
+    salary: 1000
+  }, {
+    name: 'Alice',
+    salary: 1600
+  }],
+
+  development: {
+    sites: [{
+      name: 'Peter',
+      salary: 2000
+    }, {
+      name: 'Alex',
+      salary: 1800
+    }],
+
+    internals: [{
+      name: 'Jack',
+      salary: 1300
+    }]
+  }
+};
+```
+
+### 1️⃣5️⃣ **Deep Merge with Value Retention**
+**Description**
+Write a function deepMerge(obj1, obj2) that merges two nested objects recursively. If a key exists in both objects:
+# If the values are objects, merge them recursively.
+# If the values are numbers, store both values in an array instead of overwriting them.
+# If the values are arrays, concatenate them.
+
+```js
+const obj1 = { a: 1, b: { c: 2, d: 3 } };
+const obj2 = { b: { d: 4, e: 5 }, f: 6 };
+
+deepMerge(obj1, obj2);
+// Output: { a: 1, b: { c: 2, d: [3, 4], e: 5 }, f: 6 }
+```
+👉 Here, instead of d: 3 being overwritten, it is stored as [3, 4].
+
+### 🔹 Bonus Challenge:
+# Extend the function to handle merging strings by concatenating them instead of overwriting.
+# Ensure that objects, arrays, and primitive values are merged correctly.
