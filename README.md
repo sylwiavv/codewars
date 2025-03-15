@@ -234,9 +234,9 @@ const company = {
 ### 1️⃣5️⃣ **Deep Merge with Value Retention**
 **Description**
 Write a function deepMerge(obj1, obj2) that merges two nested objects recursively. If a key exists in both objects:
-# If the values are objects, merge them recursively.
-# If the values are numbers, store both values in an array instead of overwriting them.
-# If the values are arrays, concatenate them.
+* If the values are objects, merge them recursively.
+* If the values are numbers, store both values in an array instead of overwriting them.
+* If the values are arrays, concatenate them.
 
 ```js
 const obj1 = { a: 1, b: { c: 2, d: 3 } };
@@ -248,5 +248,5 @@ deepMerge(obj1, obj2);
 👉 Here, instead of d: 3 being overwritten, it is stored as [3, 4].
 
 ### 🔹 Bonus Challenge:
-# Extend the function to handle merging strings by concatenating them instead of overwriting.
-# Ensure that objects, arrays, and primitive values are merged correctly.
+* Extend the function to handle merging strings by concatenating them instead of overwriting.
+* Ensure that objects, arrays, and primitive values are merged correctly.
