@@ -315,4 +315,61 @@ const deepMergeObj = (obj1, obj2) => {
         return acc;
     }, {});
 };
-console.log(deepMergeObj(obj1, obj2))
+// ------------------------------ //
+const occurArray = [1, [5, 1], 2, [[4, 1, 2], 5], 8, 3, [[4, 2]]];
+
+const countOccurArray = (arr, number) => {
+  const count = arr.reduce((acc, element) => {
+    if (Array.isArray(element)) {
+      return Number(acc) + countOccurArray(element, number);
+    } else if (element === number) {
+      return Number(acc) + 1;
+    }
+    return Number(acc);
+  }, 0);
+
+  return Number(count) > 0 ? Number(count) : [];
+};
+
+// ###  1️⃣8️⃣
+const formatDuration = (seconds) => {
+    if (!seconds) {
+      return "now";
+    }
+  
+    const time = {
+      year: 31536000,
+      day: 86400,
+      hour: 3600,
+      minute: 60,
+      second: 1,
+    };
+    const res = [];
+  
+    Object.keys(time).forEach((key) => {
+      if (seconds >= time[key]) {
+        const val = Math.floor(seconds / time[key]);
+        res.push(val + " " + key + (val > 1 ? "s" : ""));
+        seconds = seconds % time[key];
+      }
+    });
+  
+    return res.length > 1
+      ? res.slice(0, -1).join(", ") + " and " + res[res.length - 1]
+      : res[0];
+  };
+
+   // ---------------------------- //
+//    ###  1️⃣8️⃣ **Alphabet psition**
+   const input = "The sunset sets at twelve o' clock."
+  
+   const alphabetPosition = (text) => {
+    return text
+        .toLowerCase() 
+        .split("") 
+        .filter(char => /[a-z]/.test(char)) 
+        .map(char => char.charCodeAt(0) - 96) 
+        .join(" "); 
+};
+
+  console.log(alphabetPosition(input))
